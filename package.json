@@ -4,7 +4,7 @@
   "description": "¡Sígueme en Youtube! https://www.youtube.com/midudev",
   "main": "index.js",
   "scripts": {
-    "build": "standard --fix && rimraf dist && webpack --mode production",
+    "build": "standard --fix && rimraf dist && webpack --mode production --config ./webpack.config.js",
     "dev": "standard --fix && webpack serve --mode development",
     "lint": "standard"
   },
@@ -44,7 +44,9 @@
   },
   "standard": {
     "ignore": [
-      "/api/**"
+      "/api/**",
+      "/scripts/**",
+      "/config/**"
     ]
   },
   "eslintConfig": {

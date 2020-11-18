@@ -3,7 +3,17 @@ import React, { createContext, useContext, useReducer } from 'react'
 const Context = createContext()
 
 const initialState = {
-  isAuth: false
+  isAuth: window.sessionStorage.getItem('token')
+}
+
+const activateAuth = ({ token }) => {
+  window.sessionStorage.setItem('token', token)
+  return true
+}
+
+const removeAuth = () => {
+  window.sessionStorage.removeItem('token')
+  return false
 }
 
 const reducer = (state, action) => {
@@ -11,9 +21,13 @@ const reducer = (state, action) => {
     case 'activateAuth':
       return {
         ...state,
-        isAuth: action.isAuth
+        isAuth: activateAuth(action)
       }
-
+    case 'removeAuth':
+      return {
+        ...state,
+        isAuth: removeAuth()
+      }
     default:
       return state
   }
