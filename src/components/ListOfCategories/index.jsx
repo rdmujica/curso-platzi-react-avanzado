@@ -1,12 +1,14 @@
 import React from 'react'
+
 import { Category } from '../Category'
 import { List, Item } from './styles'
-import { useGetCategories, useOnScrollY } from '../../hooks'
+import useGetCategories from '../../hooks/useGetCategories'
+import useOnScrollY from '../../hooks/useOnScrollY'
 
 const CATEGORIES_URL =
   'https://petgram-server-rdml-kli4u9ssf.vercel.app/categories'
 
-export const ListOfCategories = () => {
+const ListOfCategoriesComponent = () => {
   const [categories, loading] = useGetCategories(CATEGORIES_URL)
   const [showFixed] = useOnScrollY(200)
 
@@ -35,3 +37,5 @@ export const ListOfCategories = () => {
     </>
   )
 }
+
+export const ListOfCategories = React.memo(ListOfCategoriesComponent)

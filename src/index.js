@@ -1,15 +1,16 @@
+import React from 'react'
+import ReactDOM from 'react-dom'
 import {
   ApolloClient,
   ApolloProvider,
   InMemoryCache,
   createHttpLink
 } from '@apollo/client'
-import React from 'react'
-import ReactDOM from 'react-dom'
-import App from './App'
-import { StateProvider } from './Context'
 import { setContext } from '@apollo/client/link/context'
 import { onError } from '@apollo/client/link/error'
+
+import App from './App'
+import { StateProvider } from './Context'
 
 const httpLink = createHttpLink({
   // uri: 'https://petgram-server-rdml-kli4u9ssf.vercel.app/graphql',

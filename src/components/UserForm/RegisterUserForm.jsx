@@ -1,9 +1,10 @@
 import React from 'react'
-import { useStateValue } from '../../Context'
-import UserForm from './UserForm'
-import { useRegisterMutation } from '../../hooks'
 
-const RegisterUserForm = () => {
+import { useStateValue } from '../../Context'
+import { UserForm } from './UserForm'
+import useRegisterMutation from '../../hooks/useRegisterMutation'
+
+export const RegisterUserForm = () => {
   const [, dispatch] = useStateValue()
 
   const [
@@ -18,7 +19,7 @@ const RegisterUserForm = () => {
     registerMutation({ variables: { input: { email, password } } }).then(
       ({ data }) => {
         const { signup: token } = data
-        dispatch({ type: 'activateAuth', isAuth: true, token })
+        dispatch({ type: 'activateAuth', token })
       }
     )
   }
@@ -32,5 +33,3 @@ const RegisterUserForm = () => {
     />
   )
 }
-
-export default RegisterUserForm

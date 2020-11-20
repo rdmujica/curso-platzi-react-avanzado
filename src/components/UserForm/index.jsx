@@ -1,2 +1,2 @@
-export { default as RegisterUserForm } from './RegisterUserForm'
-export { default as LoginUserForm } from './LoginUserForm'
+export { RegisterUserForm } from './RegisterUserForm'
+export { LoginUserForm } from './LoginUserForm'

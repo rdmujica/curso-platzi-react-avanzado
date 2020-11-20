@@ -1,4 +1,5 @@
 import React from 'react'
+
 import { Grid, Image, Link } from './styles'
 
 export const ListOfFavs = ({ favs = [] }) => (

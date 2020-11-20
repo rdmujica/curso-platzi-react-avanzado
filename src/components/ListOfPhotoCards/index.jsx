@@ -1,5 +1,6 @@
 import React from 'react'
-import { useGetPhotos } from '../../hooks'
+
+import useGetPhotos from '../../hooks/useGetPhotos'
 import { PhotoCard } from '../PhotoCard'
 
 export const ListOfPhotoCards = ({ categoryId }) => {

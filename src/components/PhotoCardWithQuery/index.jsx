@@ -1,9 +1,10 @@
 import React from 'react'
-import { useSinglePhoto } from '../../hooks'
+
+import useGetSinglePhoto from '../../hooks/useGetSinglePhoto'
 import { PhotoCard } from '../PhotoCard'
 
 export const PhotoCardWithQuery = ({ id }) => {
-  const [loading, error, data] = useSinglePhoto(id)
+  const [loading, error, data] = useGetSinglePhoto(id)
   if (loading) return <p>Loading...</p>
   if (error) return <p>Error</p>
   const { photo } = data

@@ -1,8 +1,10 @@
 import React from 'react'
-import { Img, ImgWrapper, Article } from './styles'
-import { useToggleLikePhoto, useNearScreen } from '../../hooks'
-import { FavButton } from '../FavButton'
 import { Link } from '@reach/router'
+
+import { Img, ImgWrapper, Article } from './styles'
+import useToggleLikePhoto from '../../hooks/useToggleLikePhoto'
+import useNearScreen from '../../hooks/useNearScreen'
+import { FavButton } from '../FavButton'
 
 const DEFAULT_IMAGE =
   'https://images.unsplash.com/photo-1518791841217-8f162f1e1131?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60'

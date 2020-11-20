@@ -1,9 +1,10 @@
 import React from 'react'
-import { useInputValue } from '../../hooks'
+
+import useInputValue from '../../hooks/useInputValue'
 import { Form, Input, Title, Error } from './styles'
 import { SubmitButton } from '../SubmitButton'
 
-const UserForm = ({ onSubmit, title, error, disabled }) => {
+export const UserForm = ({ onSubmit, title, error, disabled }) => {
   const email = useInputValue('')
   const password = useInputValue('')
 
@@ -29,5 +30,3 @@ const UserForm = ({ onSubmit, title, error, disabled }) => {
     </>
   )
 }
-
-export default UserForm

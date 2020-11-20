@@ -1,9 +1,10 @@
 import React from 'react'
-import { useStateValue } from '../../Context'
-import UserForm from './UserForm'
-import { useLoginMutation } from '../../hooks'
 
-const LoginUserForm = () => {
+import { useStateValue } from '../../Context'
+import { UserForm } from './UserForm'
+import useLoginMutation from '../../hooks/useLoginMutation'
+
+export const LoginUserForm = () => {
   const [, dispatch] = useStateValue()
 
   const [
@@ -32,5 +33,3 @@ const LoginUserForm = () => {
     />
   )
 }
-
-export default LoginUserForm
